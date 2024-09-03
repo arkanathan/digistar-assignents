@@ -2,10 +2,6 @@
 
 This repository contains a collection of assignments completed during the Digistar Class program. Each assignment is organized into its own folder, containing all the necessary files, documentation, and code. The purpose of this repository is to showcase the work and learning progress throughout the program.
 
-# Digistar Class Assignments Collection
-
-This repository contains a collection of assignments completed during the Digistar Class program. Each assignment is organized into its own folder, containing all the necessary files, documentation, and code. The purpose of this repository is to showcase the work and learning progress throughout the program.
-
 ## Repository Structure
 ```
 digistar-assignments/
@@ -27,11 +23,8 @@ Each folder corresponds to a specific assignment and includes:
 ## Contributions
 This repository is primarily for educational purposes and to document the assignments completed during the Digistar Class program. Contributions are welcome if they align with the educational goals of the repository.
 
-## License
-This project is licensed under the MIT License.
-
 ---
 
 ### Author Information
 
-This repository and all the assignments within it were written and completed by **Nathan Dava Arkananta** as part of the Digistar Class program.
+This repository and all the assignments within it were written and completed by **Nathan Dava Arkananta** (!Foxtrot) as part of the Digistar Class program.
