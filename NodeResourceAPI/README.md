@@ -129,10 +129,6 @@ Content-Type: application/json
 
 Contributions are welcome! If you'd like to contribute, feel free to submit a pull request or open an issue.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Authors
 
 - **Nathan Dava Arkananta** - [arkanathan](https://github.com/arkanathan)
