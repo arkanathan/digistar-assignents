@@ -1,26 +1,69 @@
+
 # NodeResourceAPI
 
-A simple and secure Node.js RESTful API for managing resources, user authentication, and authorization. This project uses MongoDB for data storage and JWT for secure user authentication. Additionally, geo-restriction middleware is implemented to limit access based on geographic location.
+**NodeResourceAPI** is a secure and simple RESTful API built with Node.js and Express.js for managing resources, user authentication, and authorization. The project uses MongoDB as the database, with JWT (JSON Web Tokens) for secure user authentication. Additionally, the API includes geo-restriction middleware to limit access based on geographic location, as well as robust error handling and soft delete functionality for resources.
 
 ## Features
-- **User Authentication**: Secure registration, login, and JWT-based authentication.
-- **Resource Management**: API endpoints for creating, reading, updating, and deleting resources.
-- **Geo-Restriction Middleware**: Limit access to API based on user location.
-- **Error Handling**: Centralized error handling for a cleaner codebase.
-- **Soft Delete**: Resources can be soft-deleted, preserving data without exposing it in API responses.
+- **User Authentication**: Provides secure registration, login, and JWT-based authentication.
+- **Resource Management**: API endpoints for creating, reading, updating, and soft-deleting resources.
+- **Geo-Restriction Middleware**: Restrict API access based on the user's geographic location.
+- **Error Handling**: Centralized error handling for clean and consistent error responses.
+- **Soft Delete**: Resources can be soft-deleted, allowing you to hide data without fully deleting it from the database.
+
+## Project Structure
+```plaintext
+NodeResourceAPI/
+├── config/
+│   ├── db.js                  # MongoDB connection setup
+│   ├── jwt.js                 # JWT configuration
+│
+├── controllers/
+│   ├── adminController.js      # Admin-related functionality
+│   ├── authController.js       # User authentication (login, register)
+│   ├── userController.js       # User-related functionality
+│
+├── middlewares/
+│   ├── authMiddleware.js       # Authentication middleware
+│   ├── errorHandler.js         # Centralized error handling
+│   ├── geoRestrict.js          # Geo-restriction middleware
+│   ├── roleMiddleware.js       # Role-based access control middleware
+│   ├── softDelete.js           # Middleware to implement soft deletion
+│   ├── timestamp.js            # Middleware for timestamp
+│
+├── models/
+│   ├── Resource.js             # Resource schema definition
+│   ├── userModel.js            # User schema definition
+│
+├── routes/
+│   ├── authRoutes.js           # Routes for authentication
+│   ├── resourceRoutes.js       # Routes for resource management
+│   ├── userRoutes.js           # Routes for user management
+│
+├── services/
+│   ├── authService.js          # JWT token generation and verification logic
+│
+├── utils/
+│   ├── validator.js            # Utility functions for input validation
+│
+├── .env                        # Environment variables (not to be shared publicly)
+├── server.js                   # Entry point of the application
+├── README.md                   # Documentation for the project
+
+```
 
 ## Installation
 
 ### Prerequisites
 - **Node.js** and **npm** installed on your system.
-- **MongoDB** running locally or using a remote MongoDB Atlas instance.
-- **MongoDB Compass** (optional for database management).
+- **MongoDB** running locally or remotely (using MongoDB Atlas, for instance).
+- **MongoDB Compass** (optional for visual database management).
 
 ### Steps
+
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/arkanathan/digistar-assignments/tree/main/NodeResourceAPI
+   git clone https://github.com/arkanathan/digistar-assignments
    ```
 
 2. Navigate to the project directory:
@@ -63,8 +106,8 @@ A simple and secure Node.js RESTful API for managing resources, user authenticat
 ### Resource Management
 
 - **POST** `/api/resource`: Create a new resource (requires authentication).
-- **GET** `/api/resource`: Get all resources (requires authentication).
-- **PUT** `/api/resource/:id`: Update a specific resource (requires authentication).
+- **GET** `/api/resource`: Retrieve all non-deleted resources (requires authentication).
+- **PUT** `/api/resource/:id`: Update a specific resource by ID (requires authentication).
 - **DELETE** `/api/resource/:id`: Soft delete a resource (requires authentication).
 
 ## Usage Example
@@ -84,12 +127,12 @@ Content-Type: application/json
 
 ## Contributing
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
+Contributions are welcome! If you'd like to contribute, feel free to submit a pull request or open an issue.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Authors
 
-- Nathan Dava Arkananta (https://github.com/arkanathan)
+- **Nathan Dava Arkananta** - [arkanathan](https://github.com/arkanathan)
